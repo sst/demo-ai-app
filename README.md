@@ -34,9 +34,9 @@ Currently the embeddings can be generated using the `titan-embed-text-v1`, `tita
 
 ### Ion
 
-[❍ Ion](https://github.com/sst/ion) is an experimental new engine for [SST](https://sst.dev) that has some unique advantages over our previous CDK based engine. Here are some a couple that you can see in action in this repo:
+[❍ Ion](https://github.com/sst/ion) is an experimental new engine for [SST](https://sst.dev) that has some unique advantages over our previous CDK based engine. Here are a couple that you can see in action in this repo:
 
-1. It's a lot faster to deploy
+1. It's a lot faster to deploy, 10x faster
 2. There are [no stacks](sst.config.ts#L15) or stack limits
 3. Next.js 14 with linked resources are deployed in order and don't need a _double deploy_
 4. Next.js apps have access to linked resources without the need for [`sst bind next build`](package.json#L7)
