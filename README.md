@@ -6,6 +6,12 @@ A sample movies app built with [❍ Ion](https://github.com/sst/ion) to demo how
 
 The movie database in this app contains around 700 popular movies. You can search through them, check out related movies, and some of the movies are also tagged.
 
+## About
+
+Most of the AI demos to date include some form of chat. While this is useful, it doesn't apply to majority of the apps out there. It also involves storing your data outside your infrastructure.
+
+This demo shows how you can use AI related features in your infrastructure in a way that makes sense to your users.
+
 ## AI
 
 The following AI features are powered by our new Vector component.
