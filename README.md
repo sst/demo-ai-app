@@ -38,9 +38,10 @@ Currently the embeddings can be generated using the `titan-embed-text-v1`, `tita
 
 1. It's a lot faster to deploy, 10x faster
 2. There are [no stacks](sst.config.ts#L15) or stack limits
-3. Access linked resources in Next.js doesn't need top-level await
-4. Next.js 14 with linked resources are deployed in order and don't need a _double deploy_
-5. Next.js apps have access to linked resources without the need for [`sst bind next build`](package.json#L7)
+3. No cyclical dependency issues in your resources
+4. Access linked resources in Next.js doesn't need top-level await
+5. Next.js 14 with linked resources are deployed in order and don't need a _double deploy_
+6. Next.js apps have access to linked resources without the need for [`sst bind next build`](package.json#L7)
 
 ## How it Works
 
