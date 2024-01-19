@@ -1,7 +1,5 @@
 /// <reference path="./.sst/src/global.d.ts" />
 
-import { Secret } from "./.sst/src/components";
-
 export default $config({
   app(input) {
     return {
