@@ -36,7 +36,7 @@ export default function Header({ controls, breadcrumb }: HeaderProps) {
               carries more context.{" "}
               <a
                 target="_blank"
-                href={`${config.repo}/main/data/movies.data.ts#L5`}
+                href={`${config.repo}/blob/main/data/movies.data.ts#L5`}
               >
                 View source
               </a>
@@ -52,7 +52,7 @@ export default function Header({ controls, breadcrumb }: HeaderProps) {
               Deep search your data using natural language.{" "}
               <a
                 target="_blank"
-                href={`${config.repo}/blob/main/app/search/page.tsx#L80`}
+                href={`${config.repo}/blob/main/app/search/page.tsx#L89`}
               >
                 View source
               </a>

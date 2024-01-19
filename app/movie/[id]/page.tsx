@@ -17,20 +17,24 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 export const revalidate = 60;
 
 export default async function Page({ params }: { params: { id: string } }) {
   const item = await getById(params.id);
-  const data = item.data
+  const data = item.data;
 
   const ret = await vector.retrieve({
-    text: `# Title ${data.title} # Plot ${data.synopsis.join("\n").substring(0, 32_000)}`,
+    text: `# Title ${data.title} # Plot ${data.synopsis
+      .join("\n")
+      .substring(0, 32_000)}`,
     include: { type: "movie" },
     exclude: { id: params.id },
     count: 50,
   });
-  const resultIds = rankMovies(ret.results.filter((r: any) => r.metadata.id !== params.id)).slice(0, 5)
+  const resultIds = rankMovies(
+    ret.results.filter((r: any) => r.metadata.id !== params.id)
+  ).slice(0, 5);
   const results = await batchGet(resultIds);
 
   return (
@@ -60,7 +64,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 carries more context.{" "}
                 <a
                   target="_blank"
-                  href={`${config.repo}/blob/main/load.ts#L67`}
+                  href={`${config.repo}/blob/main/load.ts#L803`}
                 >
                   View source
                 </a>
@@ -75,10 +79,10 @@ export default async function Page({ params }: { params: { id: string } }) {
           <div className={styles.relatedTitle}>
             <h3>Related</h3>
             <Pulse title="Semantically Related" className={styles.pulseRelated}>
-              Find semantically similar data in your database.
+              Find semantically similar data in your database.{" "}
               <a
                 target="_blank"
-                href={`${config.repo}/blob/main/app/movie/%5Bid%5D/page.tsx#L26`}
+                href={`${config.repo}/blob/main/app/movie/%5Bid%5D/page.tsx#L27`}
               >
                 View source
               </a>
@@ -88,7 +92,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           <ul className={styles.related}>
             {resultIds.map((id) => {
               const movie = results.find((m) => m.id === id)!;
-              const related = (movie.data)
+              const related = movie.data;
               return (
                 <MovieCard
                   key={movie.id}
