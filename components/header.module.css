@@ -1,0 +1,121 @@
+.header {
+  --search-width: 200px;
+  --breadcrumb-font-size: 1.25rem;
+
+  margin-top: var(--app-padding);
+  margin-bottom: 2rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: space-between;
+}
+@media (max-width: 30rem) {
+  .header {
+    --breadcrumb-font-size: 1.125rem;
+
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+    height: auto;
+  }
+}
+
+.leftCol {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+@media (max-width: 30rem) {
+  .leftCol {
+    gap: 0.25rem;
+    flex-direction: column;
+  }
+}
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.breadcrumbSeparator {
+  color: rgba(var(--color-text-dimmed));
+  font-size: var(--breadcrumb-font-size);
+  font-weight: 500;
+}
+.breadcrumb {
+  color: rgba(var(--color-text-secondary));
+  font-size: var(--breadcrumb-font-size);
+  font-weight: 600;
+}
+
+.rightCol {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+@media (max-width: 30rem) {
+  .rightCol {
+    gap: 0;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+.pulseTags {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  transform: translateY(-50%) translateX(-50%);
+}
+.tags {
+  position: relative;
+  display: flex;
+  gap: 0.75rem;
+}
+@media (max-width: 30rem) {
+  .tags {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+  }
+  .pulseTags {
+    left: 1rem;
+    top: 0.75rem;
+  }
+}
+
+.search {
+  position: relative;
+}
+.search > a {
+  border: 1px solid rgba(var(--color-text-dimmed));
+  border-radius: var(--border-radius);
+  width: var(--search-width);
+  height: 40px;
+  background: transparent;
+  padding-left: 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(var(--color-text-dimmed));
+}
+@media (max-width: 30rem) {
+  .search > a {
+    width: 100%;
+  }
+}
+.pulseSearch {
+  position: absolute;
+  right: -1.5rem;
+  top: 0.5rem;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.search > a > svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: var(--opacity-icon);
+}

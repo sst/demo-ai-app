@@ -1,0 +1,7 @@
+.grid {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: calc(var(--app-padding) - 0.5rem);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}

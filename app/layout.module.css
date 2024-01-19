@@ -1,0 +1,25 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: var(--app-padding);
+  padding: 0 var(--app-padding);
+}
+.content {
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--app-width);
+}
+.footer {
+  border-top: 1px solid rgba(var(--color-background-surface));
+  width: 100%;
+  height: var(--footer-height);
+  margin: 0 auto;
+  max-width: var(--app-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: rgba(var(--color-text-secondary));
+}

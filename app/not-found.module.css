@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(100vh - var(--footer-height) - var(--app-padding));
+}
+.link {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}

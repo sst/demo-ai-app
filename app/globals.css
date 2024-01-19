@@ -1,0 +1,129 @@
+:root {
+  --color-accent: 58, 124, 227;
+  --color-text-rgb: 0, 26, 51;
+  --color-background-rgb: 232, 234, 236;
+  --color-background-modal-rgb: 210, 213, 218;
+
+  --opacity-text-secondary: 0.6;
+  --opacity-text-dimmed: 0.2;
+
+  --shadow-sm: 0 1px 1px rgba(0,0,0,0.05),
+              0 2px 2px rgba(0,0,0,0.05),
+              0 3px 3px rgba(0,0,0,0.05),
+              0 4px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 1px 1px rgba(0,0,0,0.11),
+              0 2px 2px rgba(0,0,0,0.11),
+              0 4px 4px rgba(0,0,0,0.11),
+              0 6px 8px rgba(0,0,0,0.11),
+              0 8px 16px rgba(0,0,0,0.11);
+  --shadow-lg: 0 1px 1px rgba(0,0,0,0.11),
+                0 2px 2px rgba(0,0,0,0.11),
+                0 4px 6px rgba(0,0,0,0.11),
+                0 8px 10px rgba(0,0,0,0.11),
+                0 16px 18px rgba(0,0,0,0.11);
+  --shadow-modal: 0 1px 1px rgba(0,0,0,0.06),
+                0 2px 2px rgba(0,0,0,0.06),
+                0 4px 6px rgba(0,0,0,0.06),
+                0 8px 10px rgba(0,0,0,0.06),
+                0 16px 18px rgba(0,0,0,0.06);
+}
+:root {
+  --app-width: 64rem;
+  --app-padding: 3rem;
+  --footer-height: 5rem;
+
+  --line-height: 1.65;
+  --border-radius: 0.25rem;
+  --opacity-icon: 0.85;
+
+  --color-text: var(--color-text-rgb), 1;
+  --color-text-secondary: var(--color-text-rgb), var(--opacity-text-secondary);
+  --color-text-dimmed: var(--color-text-rgb), var(--opacity-text-dimmed);
+
+  --color-background: var(--color-background-rgb), 1;
+  --color-background-surface: var(--color-text-rgb), 0.06;
+  --color-background-modal: var(--color-background-modal-rgb), 0.95;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: 70, 133, 232;
+    --color-text-rgb: 244, 246, 247;
+    --color-background-rgb: 0, 26, 51;
+    --color-background-modal-rgb: 55, 68, 88;
+
+    --opacity-text-secondary: 0.65;
+    --opacity-text-dimmed: 0.2;
+
+    --shadow-sm: 0 1px 1px rgba(0,0,0,0.3),
+                0 2px 2px rgba(0,0,0,0.3),
+                0 3px 3px rgba(0,0,0,0.3),
+                0 4px 4px rgba(0,0,0,0.3);
+    --shadow-md: 0 1px 1px rgba(0,0,0,0.3),
+                0 2px 2px rgba(0,0,0,0.3),
+                0 4px 4px rgba(0,0,0,0.3),
+                0 6px 8px rgba(0,0,0,0.3),
+                0 8px 16px rgba(0,0,0,0.3);
+    --shadow-lg: 0 1px 1px rgba(0,0,0,0.4),
+                  0 2px 2px rgba(0,0,0,0.4),
+                  0 4px 6px rgba(0,0,0,0.4),
+                  0 8px 10px rgba(0,0,0,0.4),
+                  0 16px 18px rgba(0,0,0,0.4);
+    --shadow-modal: 0 1px 1px rgba(0,0,0,0.1),
+                  0 2px 2px rgba(0,0,0,0.1),
+                  0 4px 6px rgba(0,0,0,0.1),
+                  0 8px 10px rgba(0,0,0,0.1),
+                  0 16px 18px rgba(0,0,0,0.1);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+html,
+body {
+}
+
+body {
+  color: rgb(var(--color-text));
+  background: rgb(var(--color-background));
+}
+
+h1 {
+  font-size: 2rem;
+}
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+@media (max-width: 30rem) {
+  :root {
+    --app-padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.125rem;
+  }
+}

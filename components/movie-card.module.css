@@ -1,0 +1,17 @@
+.card {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius);
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
