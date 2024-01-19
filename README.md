@@ -32,11 +32,20 @@ The Vector component is based on Amazon Bedrock and it exposes a couple of funct
 
 Currently the embeddings can be generated using the `titan-embed-text-v1`, `titan-embed-image-v1`, and `text-embedding-ada-002`.
 
+### Ion
+
+[❍ Ion](https://github.com/sst/ion) is an experimental new engine for [SST](https://sst.dev) that has some unique advantages over our previous CDK based engine. Here are some a couple that you can see in action in this repo:
+
+1. It's a lot faster to deploy
+2. There are [no stacks](sst.config.ts#L15) or stack limits
+3. Next.js 14 with linked resources are deployed in order and don't need a _double deploy_
+4. Next.js apps have access to linked resources without the need for [`sst bind next build`](package.json#L7)
+
 ## How it Works
 
 This demo works by ingesting movie data from IMDB, generating embeddings, and storing it in a Vector database. The Next.js app then retrieves the data from the Vector database.
 
-The sample app is made up of **4 simple components** defined in the [`sst.config.ts`](main/sst.config.ts):
+The sample app is made up of **4 simple components** defined in the [`sst.config.ts`](sst.config.ts):
 
 1. A DynamoDB table to store the movies
 2. An S3 bucket to store the posters
