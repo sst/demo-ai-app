@@ -12,6 +12,7 @@ export default function MovieCard(props: MovieCardProps) {
     <Link
       title={props.hint}
       className={styles.card}
+      prefetch={false}
       href={`/movie/${props.id}`}
     >
       <img src={props.poster} alt={props.title} className={styles.cardImage} />
