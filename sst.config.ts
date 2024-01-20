@@ -25,7 +25,7 @@ export default $config({
 
     const vector = new sst.Vector("Vector", {
       model: "text-embedding-ada-002",
-      openAiApiKey: new Secret("OpenAiApiKey").value,
+      openAiApiKey: new sst.Secret("OpenAiApiKey").value,
     });
 
     const site = new sst.Nextjs("Web", {

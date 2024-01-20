@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./movie-card.module.css";
 
 interface MovieCardProps {
@@ -15,7 +16,14 @@ export default function MovieCard(props: MovieCardProps) {
       prefetch={false}
       href={`/movie/${props.id}`}
     >
-      <img src={props.poster} alt={props.title} className={styles.cardImage} />
+      <Image
+        width={200}
+        loading="lazy"
+        height={300}
+        src={props.poster}
+        alt={props.title}
+        className={styles.cardImage}
+      />
     </Link>
   );
 }
