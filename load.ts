@@ -718,8 +718,16 @@ async function load() {
     "tt0258000",
   ];
 
+  // Create the folder if it doesn't exist
+  const folderPath = "./data/imdb";
+  const imdbFolderExists = await fs
+    .stat(folderPath)
+    .then(() => true)
+    .catch(() => false);
+  if (!imdbFolderExists) await fs.mkdir(folderPath);
+
   for (const id of ids) {
-    const path = `./data/imdb/${id}.html`;
+    const path = `${folderPath}/${id}.html`;
     const exists = await fs
       .stat(path)
       .then(() => true)
@@ -762,7 +770,7 @@ async function load() {
     const year = parseInt(
       $("title")
         .text()
-        .match(/\((\d+)\)/)?.[1] || "0",
+        .match(/\((\d+)\)/)?.[1] || "0"
     );
     const title = $("[data-testid=subtitle]").text().trim();
     const summary = $("[data-testid=sub-section-summaries] li:first-child")
@@ -783,7 +791,7 @@ async function load() {
         Key: "posters/" + id + ".jpg",
         ContentType: "image/jpeg",
         Body: await fetch(poster).then((res) => res.arrayBuffer() as any),
-      }),
+      })
     );
 
     await vector.remove({
@@ -830,7 +838,7 @@ async function load() {
             year,
           }),
         },
-      }),
+      })
     );
     console.log("Finished", ++index);
   });
